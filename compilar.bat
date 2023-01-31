@@ -1,0 +1,5 @@
+git clone https://github.com/Dortega593/mi-libreria.git && cd ./mi-libreria && cd ./author-microservice && gradlew build -Dquarkus.package.type=uber-jar && docker build -t jaimesalvador/app-authors:1.0 . && cd .. && cd ./book-microservice && gradlew jar && gradlew copyLibs && docker build -t jaimesalvador/app-books:1.0 . && cd .. && cd ./book-client && gradlew jar && gradlew copyLibs && docker build -t jaimesalvador/app-web:1.0 . && docker push jaimesalvador/app-web:1.0 && docker push jaimesalvador/app-books:1.0 && docker push jaimesalvador/app-authors:1.0 && cd .. && docker compose up
+
+
+
+
